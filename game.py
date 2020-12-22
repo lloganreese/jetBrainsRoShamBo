@@ -68,6 +68,9 @@ class RoShamBo:
             middle_index = int((len(RoShamBo.options) - 1) / 2)
             user_lost = RoShamBo.options[user_options_index + 1:user_options_index + middle_index + 1]
 
+            # if users choice is indexed past the middle of the overall options list
+            # then the 'winning' list is created and the users_lost list is created
+            # from everything that is not in the winning list
             if user_options_index > middle_index:
                 user_lost = RoShamBo.options[user_options_index - middle_index:user_options_index + 1:1]
                 user_lost = [i for i in self.chosen_options if i not in user_lost]
